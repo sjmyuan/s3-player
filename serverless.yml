@@ -29,6 +29,17 @@ functions:
           method: get
           cors: true
           private: false
+  list:
+    handler: src/app.list
+    environment:
+      domain: ${self:custom.custom_domain}
+    timeout: 15
+    events:
+      - http:
+          path: list
+          method: get
+          cors: true
+          private: false
 resources:
   Resources:
     PlayLogGroup:
